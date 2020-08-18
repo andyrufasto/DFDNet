@@ -260,27 +260,3 @@ if __name__ == '__main__':
             print('\t################ Error in enhancing this image: {}'.format(str(e)))
             print('\t################ continue...')
             continue
-
-    #######################################################################
-    ############ Step 4: Paste the Results to the Input Image #############
-    #######################################################################
-    
-    print('\n###############################################################################')
-    print('############### Step 4: Paste the Restored Face to the Input Image ############')
-    print('###############################################################################\n')
-
-    SaveFianlPath = os.path.join(ResultsDir,'Step4_FinalResults')
-    if not os.path.exists(SaveFianlPath):
-        os.makedirs(SaveFianlPath)
-    ImgPaths = make_dataset(SaveRestorePath)
-    for i,ImgPath in enumerate(ImgPaths):
-        ImgName = os.path.split(ImgPath)[-1]
-        print('Final Restoring {}'.format(ImgName))
-        WholeInputPath = os.path.join(TestImgPath,ImgName)
-        FaceResultPath = os.path.join(SaveRestorePath, ImgName)
-        ParamPath = os.path.join(SaveParamPath, ImgName+'.npy')
-        SaveWholePath = os.path.join(SaveFianlPath, ImgName)
-        reverse_align(WholeInputPath, FaceResultPath, ParamPath, SaveWholePath, UpScaleWhole)
-
-    print('\nAll results are saved in {} \n'.format(ResultsDir))
-    
