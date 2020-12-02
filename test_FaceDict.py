@@ -49,7 +49,7 @@ def align_and_save(img_path, save_path, save_input_path, save_param_path, upsamp
     h, w, _ = img.shape
     source = get_5_points(img)
     if source is None:
-        print('\t################ No face is detected')
+        print('\t################ No se ha detectado ningun rostro')
         return
     tform = trans.SimilarityTransform()
     tform.estimate(source, reference)
@@ -186,9 +186,9 @@ if __name__ == '__main__':
     #######################################################################
     ###########Step 1: Crop and Align Face from the whole Image ###########
     #######################################################################
-    print('\n###############################################################################')
-    print('############### 1:  Recortando imagen y alineando el rostro ######################')
-    print('###############################################################################\n')
+    print('\n#===========================================================================#')
+    print('#                  4.1:Recortando imagen y alineando el rostro                #')
+    print('#=============================================================================#\n')
 
     detector = dlib.cnn_face_detection_model_v1(
         './packages/mmod_human_face_detector.dat')
@@ -219,9 +219,9 @@ if __name__ == '__main__':
     #######################################################################
     ####### Step 2: Face Landmark Detection from the Cropped Image ########
     #######################################################################
-    print('\n###############################################################################')
-    print('##################### 2: ﭂ Deteccion de facciones del rostro ######################')
-    print('###############################################################################\n')
+    print('\n#=============================================================================#')
+    print('#                     4.2: Deteccion de facciones del rostro                    #')
+    print('#===============================================================================#\n')
 
     SaveLandmarkPath = os.path.join(ResultsDir, 'Step2_Landmarks')
     if len(opt.gpu_ids) > 0:
@@ -263,9 +263,9 @@ if __name__ == '__main__':
     ####################### Step 3: Face Restoration ######################
     #######################################################################
 
-    print('\n###############################################################################')
-    print('########################### 3:  Mejorando el Rostro ##############################')
-    print('###############################################################################\n')
+    print('\n#============================================================================#')
+    print('#                           4.3: Mejorando el Rostro                             #')
+    print('#==============================================================================#\n')
 
     SaveRestorePath = os.path.join(
         ResultsDir, 'Step3_RestoreCropFace')  # Only Face Results
