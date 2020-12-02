@@ -30,7 +30,7 @@ def get_5_points(img):
         return None
     areas = []
     if len(dets) > 1:
-        print('\t###### Warning: more than one face is detected. In this version, we only handle the largest one.')
+        print('\t###### Más de un rostro fue detectado, se trabajará con el más grande.')
     for i in range(len(dets)):
         area = (dets[i].rect.right()-dets[i].rect.left()) * \
             (dets[i].rect.bottom()-dets[i].rect.top())
