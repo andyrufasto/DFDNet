@@ -181,14 +181,12 @@ if __name__ == '__main__':
     ResultsDir = opt.results_dir
     UpScaleWhole = opt.upscale_factor
 
-    print('\n###################### Now Running the X {} task ##############################'.format(UpScaleWhole))
-
     #######################################################################
     ###########Step 1: Crop and Align Face from the whole Image ###########
     #######################################################################
-    print('\n#============================================================================#')
-    print('#                    4.1:Recortando imagen y alineando el rostro             #')
-    print('#============================================================================#\n')
+    print('\n#=============================================================================#')
+    print('#                    5.1:Recortando imagen y alineando el rostro              #')
+    print('#=============================================================================#\n')
 
     detector = dlib.cnn_face_detection_model_v1(
         './packages/mmod_human_face_detector.dat')
@@ -220,7 +218,7 @@ if __name__ == '__main__':
     ####### Step 2: Face Landmark Detection from the Cropped Image ########
     #######################################################################
     print('\n#==============================================================================#')
-    print('#                     4.2: Deteccion de facciones del rostro                   #')
+    print('#                     5.2: Deteccion de facciones del rostro                   #')
     print('#==============================================================================#\n')
 
     SaveLandmarkPath = os.path.join(ResultsDir, 'Step2_Landmarks')
@@ -264,7 +262,7 @@ if __name__ == '__main__':
     #######################################################################
 
     print('\n#============================================================================#')
-    print('#                     4.3: Mejorando el Rostro                               #')
+    print('#                     5.3: Mejorando el Rostro                               #')
     print('#============================================================================#\n')
 
     SaveRestorePath = os.path.join(
