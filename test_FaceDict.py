@@ -185,7 +185,7 @@ if __name__ == '__main__':
     ###########Step 1: Crop and Align Face from the whole Image ###########
     #######################################################################
     print('\n#==============================================================================#')
-    print('#                    5.1: Recortando imagen y alineando el rostro             #')
+    print('#                    5.1: Recortando imagen y alineando el rostro              #')
     print('#==============================================================================#\n')
 
     detector = dlib.cnn_face_detection_model_v1(
