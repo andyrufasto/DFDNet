@@ -208,7 +208,7 @@ if __name__ == '__main__':
     ImgPaths = make_dataset(TestImgPath)
     for i, ImgPath in enumerate(ImgPaths):
         ImgName = os.path.split(ImgPath)[-1]
-        print('Crop and Align {} image'.format(ImgName))
+        print('Cortado y alineado {} image'.format(ImgName))
         SavePath = os.path.join(SaveCropPath, ImgName)
         SaveInput = os.path.join(SaveInputPath, ImgName)
         SaveParam = os.path.join(SaveParamPath, ImgName+'.npy')
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     ImgPaths = make_dataset(SaveCropPath)
     for i, ImgPath in enumerate(ImgPaths):
         ImgName = os.path.split(ImgPath)[-1]
-        print('Detecting {}'.format(ImgName))
+        print('Detectado {}'.format(ImgName))
         Img = io.imread(ImgPath)
         try:
             PredsAll = FD.get_landmarks(Img)
